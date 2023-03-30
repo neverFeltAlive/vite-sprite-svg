@@ -1,0 +1,30 @@
+{
+  "name": "vite-sprite-svg",
+  "version": "1.0.1",
+  "description": "A plugin which generates one sprite SVG file from multiple SVGs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite",
+    "nodejs",
+    "javascript",
+    "svg",
+    "sprite"
+  ],
+  "author": "neverfeltalive",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "fast-glob": "^3.2.12",
+    "nodejs-logger-n": "^1.0.0",
+    "prettier": "^2.8.7",
+    "svgo": "^3.0.2"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}
