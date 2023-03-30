@@ -68,7 +68,7 @@ export default function svgSpritePlugin({
         )}</svg>`;
         const svgFilePath = isDev
           ? join(publicDir, 'sprite.svg')
-          : join(outputDir, 'assets/sprite.svg');
+          : join(outputDir, 'sprite.svg');
         await fsPromises.writeFile(svgFilePath, svgSprite);
 
         // Inject link into html
