@@ -1,11 +1,12 @@
 {
   "name": "vite-sprite-svg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A plugin which generates one sprite SVG file from multiple SVGs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "keywords": [
     "vite",
     "nodejs",
