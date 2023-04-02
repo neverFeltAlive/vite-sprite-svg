@@ -23,7 +23,9 @@ function optimizeSvg(content) {
 function convertSvgToSymbol(svgString, svgName) {
   const insertIndex = svgString.indexOf('svg') + 3;
   const svgWithId = svgString.slice(0, insertIndex) + ` id="${svgName}" ` + svgString.slice(insertIndex);
-  return svgWithId.replaceAll('svg', 'symbol');
+  return svgWithId
+      .replaceAll('<svg', '<symbol')
+      .replaceAll('</svg', '</symbol');
 }
 
 /**
