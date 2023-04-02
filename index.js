@@ -16,6 +16,17 @@ function optimizeSvg(content) {
 }
 
 /**
+ * Converts svg tag to symbol tag
+ * @param svgString - string of an svg
+ * @param svgName - name of an svg
+ */
+function convertSvgToSymbol(svgString, svgName) {
+  const insertIndex = svgString.indexOf('svg') + 3;
+  const svgWithId = svgString.slice(0, insertIndex) + ` id="${svgName}" ` + svgString.slice(insertIndex);
+  return svgWithId.replaceAll('svg', 'symbol');
+}
+
+/**
  * Processes svg from icons folder and injects a link to a sprite file into html
  * @param baseDir - base directory of a project
  * @param publicDir - directory for static assets
@@ -46,9 +57,7 @@ export default function svgSpritePlugin({
             } else {
               const optimizedSvg = optimizeSvg(data);
               const svgName = svgFile.split('/').pop().split('.').shift();
-              resolve(
-                `<symbol id='${svgName}' viewBox='0 0 24 24'>${optimizedSvg}</symbol>`
-              );
+              resolve(convertSvgToSymbol(optimizedSvg, svgName));
             }
           });
         });
